@@ -1,0 +1,187 @@
+---
+title: 'Final Project: "Peer Pressure: Social Interaction and the Disposition Effect"'
+author: "Yang Xi"
+date: "Jun 23rd, 2017"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+---
+
+
+## \textbf{SUMMARY}
+
+The key finding of this paper is that social interaction contributes to some traders¡¯ disposition effect, which means that investors have a tendency to sell winning assets, while holding onto losers. The author also provide a potential explanation for this effect: impression management, which is not contradict to other theories.
+
+Disposition effect is widely found in many investment behaviors. In previous literatures, authors try to research the reasons of disposition effect. Many researches attribute this disposition effect to the modifications to standard preferences and beliefs. The most famous theory consistent with this view is Cumulative Prospect Theory (Tversky and Kahneman 1992), which means that people have different risk attitudes towards gains and losses and care generally more about potential losses than potential gains. However, Barberis and Xiong (2009) point out that the Prospect Theory sometimes fails to predict the disposition effect if we use annual gain/loss. Some other studies consider social interaction as a significant factor which affect people¡¯s investment behaviors, for example the increasing market participation. In addition, peer effect are very similar to disposition effect in previous literatures. Self-image management in social networking will motivate investors to report positively about themselves (Han and Hirshleifer 2013). Also being scrutinized by peers, investors are also reluctant to recognize their own mistakes (Shefrin and Statman 1985). Motived by previous studies about disposition effect and self-image management, author is the first researcher who links social networking and disposition effect. The main contribution of this paper is that the author attribute the disposition effect to social interaction and one possible channel is that social interaction induce investors to conduct an impression management, leading to increasing disposition effect. The finding is not contradict to other extant studies. For instance Chang, Solomon and Westerfield (2016) finds that disposition effect only exist when investors actively manage their investment, which means disposition effect is relate to self-image management.
+
+In order to investigate whether social interaction will contribute to disposition effect, researchers used data comes from a social networking Web site --- myForexBook, which is a free investment-specific online social network for foreign exchange investors. In this website, traders can form bilateral friendships when one trader sends a friend request and the other agrees to it. After this confirmation, traders have access to others¡¯ positions in real time. Besides, they can positively manage their impression by sending messages to their friends. This data source is very suitable because this social network directly link brokerage accounts to a social network. Thus, researchers have access to registered investors¡¯ complete trading records of roughly fifty retail-specific foreign exchange brokerages including both ex-registered and post-registered trading records. Harnessing the advantages of this quasi-random variation in traders¡¯ exposure to their peers in this social network, researchers conduct a panel analysis to compare the difference before and after exposure to the network. Using difference-indifferences estimator, author can find whether social interaction cause increasing disposition effect. For main regression analysis, authors randomly select one trade I for every ten minute holding period t until the position closes. Sale is the dependent variable which equals one if the position is closed by trader j, equals zero otherwise. Gain equals to one if the current market price if above the asset¡¯s purchase price, zero otherwise. PostFB equals one if the trade is opened after trader j joins myForexBook and is zero otherwise. The key estimate is beta3 which represent the changes of the disposition effect as a result of social interaction. Authors implemented a panel regression using following equation, which contains time fixed effect and investor fixed effect.
+
+$$
+sale_{ijt} = \gamma_j + \gamma_t+ \beta_1gain_{ijt} + \beta_2postFB_{ijt} + \beta_3gain_{ijt}*postFB_{ijt} + \varepsilon_{it}
+$$
+Positive estimate of ¦Â3 in every regression, which contains different fix effect or control variable, say trade leverage, calendar time fixed effects and trader fixed effects, proves that increased social interaction almost doubles trader susceptibility to the disposition effect. Also in order to further test robustness, author does a placebo test using workhorse data from a large discount brokerage (Barber and Odean 2000b).
+
+Finally, author provides a potential channel of this causality---self-image management. Because traders can see others positions and send peer-to-peer message to others, traders can conduct a self-image management in order to maintain or strengthen their peer relationships. 
+
+## \textbf{CRITICIZE: Statistical meaning of research question}
+The basic question of this paper is that whether social interaction will contributes to some traders¡¯ disposition effect. Therefore, the population here should be traders who conducts social interaction with others, or we can say other traders. The sample here is the traders who join the myForexBook network. Besides, author uses workhorse data from a large discount brokerage (Barber and Odean 2000b) Basically, I think this paper statistically answers his research question, for the following reasons:
+Firstly, the p-value of OLS regression has statistical meaning: 1) the population is roughly clear. The population here is the investors who conduct social interaction with other traders. 2) The sample size contains 2433 traders and 2.2 million trades limited trading orders occurred during early 2009 to Dec. 2010. The sample size is large. 
+
+Secondly, this paper successfully analyzes the causal inference: 1) the treatment of joining the network is roughly a quasi-randomized experiment, which means that the group received treatment x = 1 is irrelevant for the value of p (y | x = 1). To be more specific, comparing the first 250, 500, and 1000 traders to join myForexBook to the last 250, 500 and 1000 traders to join, the author uses t-test and estimate a probit models, finding that observable trader characteristics, wuch as trading style, experience, age, or location, cannot explain which traders are the first to join myForexBook. 2) The treatment has well-defined interventions, which is not joining myForexBook network. 3) Author verifies its external validity using workhorse data. Even if the author only selects sample from myForexBook, he uses a placebo data as complementary, the workhorse data, which proves that traders who live near one another have correlated levels of the disposition effect. 4) The author rule out the possibility of reverse causality. Only when brokerage has legally reach agreement with myForexBook can traders have access to the network. Therefore, new brokerage enter can be view as an instrumental variable to trader entry, which uncorrelated with trader characteristics and behaviors. In other words, there is no way that having disposition effect will cause investors to join myForexBook, without the agreement with brokerage. 5) The author rule out some potential common effect by adding control variable, say trade leverage. In addition, because the author uses panel data, he can also rule out some unobservable variables by adding calendar time fixed effects and trader fixed effects.
+
+Thirdly, author selects suitable data source, supporting the reliability of the result. 1) After traders registering on this website, their trading records can be obtained with time stamped to seconds, which means there was no reporting bias or accuracy concerns. 2) This paper uses retail foreign exchange market, which fit more to an experimental setting than stock market. The foreign exchange market has minimal transaction costs and high liquidity. Therefore, nonexecution risk is not a concern for inference.
+
+## \textbf{CRITICIZE: Concerns and potential solutions}
+
+In my point of view, this paper also has some drawbacks:
+Firstly, the population of this paper is actually not clear enough. The population of this paper should be the investor who has interaction with other investors. Nevertheless, everyone can have social interaction with others. In other words, the range of the population will be very large and have no clear boundary, even all investors can be the population. Besides, not only social interaction with other investors, social interaction with non-investor people can also contribute the disposition effect. Therefore, using investor who join myForexBook as a sample might be too small to measure the causality of the whole population, even if the writer does a placebo test as a complementary. Using more placebo data source might be a solution to locate this problem. 
+
+Secondly, even if the sample can measure the effects in population, the social network defined in this paper is somehow confusing. The online social networking platform in this paper works as a social network. Every investor who registered in this website act as a node in this network. In my opinion, however, network looks like a web, and there are bunch of dots, named node, which connected by links. But it¡¯s possible that there are some dots which lie out of this network. In other words, in this online social networking platform, there might be some investors only register on this website, and have on friends on it. In this condition, they should not belongs to the network, because they have on interaction behaviors. If this situation is widely found in the myForexBook, then it¡¯s possible that we left some common causes which leads investors join the network and increasing disposition effect. In order to solve this problem, there might be some strategies: firstly, the simplest way is throw out the investors who have no friends on it. In addition, authors can construct some index to descript the characteristics of individuals¡¯ interaction behaviors. For example, they can use the number of messages each period to represent the intensity of social interaction, or use number of friends to represent the coverage of his social activities. Because of lacking data of the number of messages send each period here, I will do a subsample regression by separate the whole sample according to different number of messages send by each trader. I can simulate this data from Table 7 regression in the original paper.
+
+Thirdly, paper fails to measure one common effect, say the brokerage specific features. It¡¯s all likely that brokerage specific features are associated with unrelated changes in the disposition effect, which also predict the entry to the network. Adding brokerage indexes might acts as a potential solution for this problem. However, there is no data provided indicates different brokerages in this sample, therefore I cannot refine his main regression by adding brokerage index.
+
+Fourthly, this is a minor point. The sample used in paper is restricted to those traders¡¯ market orders because it is well known that the connection between the disposition effect and limit orders can largely be attributed to adverse selection risk (Linnainmaa 2010). However, market orders, say limit order or stop limit order, will not affect traders¡¯ social interaction. In other words, using market orders works as a collider in causation diagram rather than a common causes. Therefore, it¡¯s no need to restrict those traders who use market order. The solution here is simply use whole sample without restricting market order.
+
+## \textbf{SIMULATION and REGRESSION}
+### Data Simulation and Statistic discirption
+In this part, I simulate a bunch of data according to original paper Table 4 equation. For simplicity, I only generate J traders, each trader has n(j) trades, which I selected randomly, and each trades last different time period. You can see statistic discription about simulated data in Table 1. There are 23457 observations in total, and the maximum time period last each trade is 100. I generate the number of message send each person according to Table 7 in original paper.
+
+\begin{table}[!htbp] \centering 
+  \caption{Data description} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+gain & 23,457 & 0.501 & 0.500 & 0 & 1 \\ 
+postFB & 23,457 & 0.270 & 0.444 & 0 & 1 \\ 
+sale & 23,457 & 0.198 & 0.398 & 0 & 1 \\ 
+message & 23,457 & 5.936 & 6.154 & 0 & 42 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Since the original paper only want to find the causal inference, not prediction, the simulation data generated using original main regression equation can be very different from true data. Therefore, the coefficients of regression on simulation data set are very different from original one. However, because we only care about causal inference, we can focus on whether the coefficients are significant and what's the direction of the coefficients. In addition, because of all probability of sale generated is very very small, I set the threshold to be 1.5*mean(probability of sale). In that way, there are some sale can be equal to 1. Besides, I only contains trader fixed effect for simplicity in my simulation process. Details contain in code file.
+
+###Subsample OLS regression
+As I said in last section, the construction of authors' social network is poor, since he set everyone who enter this network is within the network. However, it's all possible that there are someone who do nothing in this network, sending no messages to others. Thus, containing these person might generate bias. In this part, I will do 4 subsample regression according to different number of messages sent by each trader. From subsample 1 to subsample 4, the number of messages is increase. I generate these 4 subsample according to the quantile of the number of messages sent each person. Details contain in code file. You can see the result in Table 2. The original regression results on simulation data set is shown in column 1, and subsample regression results are shown in column 2 to column 5.
+
+
+\begin{table}[!htbp] \centering 
+  \caption{Subsample Regression Results} 
+  \label{} 
+\scalebox{0.66}{
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-6} 
+\\[-1.8ex] & sale & sale & sale & sale & sale \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+\hline \\[-1.8ex] 
+ gain & 0.251$^{***}$ &  &  &  &  \\ 
+  & (0.004) &  &  &  &  \\ 
+  & & & & & \\ 
+ postFB & 0.033$^{***}$ &  &  &  &  \\ 
+  & (0.006) &  &  &  &  \\ 
+  & & & & & \\ 
+ postFB:gain & 0.421$^{***}$ &  &  &  &  \\ 
+  & (0.009) &  &  &  &  \\ 
+  & & & & & \\ 
+ gain1 &  & 0.286$^{***}$ &  &  &  \\ 
+  &  & (0.007) &  &  &  \\ 
+  & & & & & \\ 
+ postFB &  & 0.019$^{*}$ &  &  &  \\ 
+  &  & (0.011) &  &  &  \\ 
+  & & & & & \\ 
+ postFB:gain &  & 0.470$^{***}$ &  &  &  \\ 
+  &  & (0.017) &  &  &  \\ 
+  & & & & & \\ 
+ gain &  &  & 0.241$^{***}$ &  &  \\ 
+  &  &  & (0.008) &  &  \\ 
+  & & & & & \\ 
+ postFB &  &  & 0.060$^{***}$ &  &  \\ 
+  &  &  & (0.015) &  &  \\ 
+  & & & & & \\ 
+ postFB:gain &  &  & 0.510$^{***}$ &  &  \\ 
+  &  &  & (0.022) &  &  \\ 
+  & & & & & \\ 
+ gain &  &  &  & 0.206$^{***}$ &  \\ 
+  &  &  &  & (0.006) &  \\ 
+  & & & & & \\ 
+ postFB &  &  &  & 0.019$^{**}$ &  \\ 
+  &  &  &  & (0.009) &  \\ 
+  & & & & & \\ 
+ postFB:gain &  &  &  & 0.319$^{***}$ &  \\ 
+  &  &  &  & (0.015) &  \\ 
+  & & & & & \\ 
+ gain &  &  &  &  & 0.272$^{***}$ \\ 
+  &  &  &  &  & (0.007) \\ 
+  & & & & & \\ 
+ postFB &  &  &  &  & 0.057$^{***}$ \\ 
+  &  &  &  &  & (0.013) \\ 
+  & & & & & \\ 
+ postFB:gain &  &  &  &  & 0.462$^{***}$ \\ 
+  &  &  &  &  & (0.019) \\ 
+  & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 23,457 & 6,321 & 4,002 & 7,244 & 5,890 \\ 
+R$^{2}$ & 0.457 & 0.516 & 0.502 & 0.370 & 0.488 \\ 
+Adjusted R$^{2}$ & 0.457 & 0.515 & 0.501 & 0.370 & 0.488 \\ 
+Residual Std. Error & 0.328 (df = 23454) & 0.323 (df = 6318) & 0.322 (df = 3999) & 0.319 (df = 7241) & 0.333 (df = 5887) \\ 
+F Statistic & 6,589.922$^{***}$ (df = 3; 23454) & 2,241.320$^{***}$ (df = 3; 6318) & 1,343.020$^{***}$ (df = 3; 3999) & 1,416.439$^{***}$ (df = 3; 7241) & 1,871.776$^{***}$ (df = 3; 5887) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}}
+\end{table} 
+
+However, from Table 2, we can not see significant difference among the coefficients of postFB*gain. There are several possilibities. Firstly, joining myForexBook can be viewed as entering a social network, which means author's results are correct. Secondly, the simulation sample is not large enough which can not capture the difference. 
+
+Based on the simulation data results above, author's main regression in Table 4 is enough. Nevertheless, if we generate more data, it's possible that different subsample will have different coefficients.
+
+### Logistic Regression
+Since the dependent variable is a binary variable, we can use logistic regression. In table 3, the original regression results on simulation data set is shown in column 1, and logistic regression results are shown in column 2.
+
+\begin{table}[!htbp] \centering 
+  \caption{Logistic Regression Results} 
+  \label{} 
+\scalebox{1.43}{\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{sale} \\ 
+\\[-1.8ex] & \textit{OLS} & \textit{logistic} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ gain & 0.251$^{***}$ & $-$1.094$^{***}$ \\ 
+  & (0.004) & (0.025) \\ 
+  & & \\ 
+ postFB & 0.033$^{***}$ & $-$3.383$^{***}$ \\ 
+  & (0.006) & (0.100) \\ 
+  & & \\ 
+ postFB & 0.421$^{***}$ & 5.349$^{***}$ \\ 
+  & (0.009) & (0.110) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 23,457 & 23,457 \\ 
+R$^{2}$ & 0.457 &  \\ 
+Adjusted R$^{2}$ & 0.457 &  \\ 
+Log Likelihood &  & $-$13,131.190 \\ 
+Akaike Inf. Crit. &  & 26,268.370 \\ 
+Residual Std. Error & 0.328 (df = 23454) &  \\ 
+F Statistic & 6,589.922$^{***}$ (df = 3; 23454) &  \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}} 
+\end{table}
+
+From the results of table 3, the key coefficient of interaction term of gain and postFB is significant. Furthermore, the direction is consistant with OLS regression used in original paper. Therefore, both OLS and logistic regression are suitable to locate this problem. Logistic regression might perform better, because the dependent variable is binary.
+
+##\textbf{CONCLUSION}
+The main point of paper is to say that social interaction contributes to disposition effect. Author does a excellent job, especially doing a lot of robustness test and selecting a suitable data souce to drive the problem. However, there are some concerns, such as the unclear definition of its population and leaving out important potential common cause, the characteristics of brokerages.
+
+Based on the characteristics of orifinal data descriped in paper, I generate a panel data set with index trader j, trade i and time t. This data set contains 23457 observables. Using the simulated data, I run 4 subsample regression and a logistic regression which are different with original paper. The results are consistent with author's. However, I fail to do panel OLS, which can add different fixed effect. Since this panel data set contains 3 index, I cannot use plm to do regression which only allows 2 index. If there is way to do OLS for this panel data, and add different fixed effects, the results can be better for my own regression on simulation data.
